@@ -14,12 +14,4 @@ public class Carro1 extends TeamDriverA{
     }
 
 
-    public static void tiempoLlegada(int tiempo){
-        if (tiempo > 5){
-            System.out.println("Perdiste");
-        }else{
-            System.out.println("Ganaste");
-        }
-    }
-
 }

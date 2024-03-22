@@ -40,5 +40,12 @@ public  class Trabajador {
         this.rol = rol;
     }
 
+    public double getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(double tiempo) {
+        this.tiempo = tiempo;
+    }
 }
 

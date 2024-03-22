@@ -11,8 +11,11 @@ public class TeamDriverB extends Trabajador{
     private int cantidadPersonas;
 
     //hacer el array y sumar los valores de doubles
-    //imprimir mensaje para el conductor asignado
 
+    //imprimir mensaje para el conductor asignado
+    public static void mensajeConductorB(String conductorB){
+        System.out.println("El conductor elegido para este auto es: "+conductorB);
+    }
 }
 
 

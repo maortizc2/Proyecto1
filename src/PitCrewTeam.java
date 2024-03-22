@@ -170,8 +170,25 @@ public class PitCrewTeam {
 
     }
 
-    public static int Tiempo(int tiempo){
-        return tiempo;
+    public static void Tiempo(List <Trabajador> TeamDriverA, List<Trabajador> TeamDriverB){
+        double TiempoTDA = 0;
+        double TiempoTDB = 0;
+        for (int i = 0; i < TeamDriverA.size(); i++) {
+            TiempoTDA = TiempoTDA + TeamDriverA.get(i).getTiempo();
+        }
+        for (int i = 0; i < TeamDriverB.size(); i++) {
+            TiempoTDB = TiempoTDB + TeamDriverB.get(i).getTiempo();
+        }
+        if(TiempoTDA <= 2 ){
+            System.out.println("Gano A");
+        } else if (TiempoTDA > 2) {
+            System.out.println("Perdio A");
+        }
+        if(TiempoTDB <= 2){
+            System.out.println("Gano B");
+        } else if (TiempoTDB > 2) {
+            System.out.println("Perdio B");
+        }
     }
 
 
