@@ -14,6 +14,7 @@ public class PitCrewTeam {
     private static List<Trabajador> teamDriverB = new ArrayList<>();
 
     public PitCrewTeam() {
+
     }
 
 
@@ -22,9 +23,10 @@ public class PitCrewTeam {
     }
 
 
-    public static void imprimirListaTrabajadores() {
+    public static void imprimirListaTrabajadores(List<Trabajador> listaTrabajadores) {
         for (Trabajador trabajador : listaTrabajadores) {
-            System.out.println(trabajador);
+            trabajador.atributos();
+            System.out.println(); // Agrega una línea en blanco para separar los trabajadores
         }
     }
 
@@ -182,14 +184,16 @@ public class PitCrewTeam {
         if(TiempoTDA <= 2 ){
             System.out.println("Gano A");
         } else if (TiempoTDA > 2) {
-            System.out.println("Perdio A");
+            System.out.println("Perdio ");
         }
-        if(TiempoTDB <= 2){
+        if(TiempoTDB > 2){
             System.out.println("Gano B");
-        } else if (TiempoTDB > 2) {
+        } else if (TiempoTDB < 2) {
             System.out.println("Perdio B");
         }
     }
+
+
 
 
 

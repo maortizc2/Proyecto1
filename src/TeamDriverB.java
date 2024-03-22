@@ -2,7 +2,7 @@ import Tareas.Trabajador;
 
 
 
-public class TeamDriverB extends Trabajador{
+public class TeamDriverB extends Trabajador implements Carro2{
     public TeamDriverB(String nombre, String rol,double tiempo) {
         super(nombre, rol,tiempo);
     }
@@ -10,11 +10,14 @@ public class TeamDriverB extends Trabajador{
     private String conductorA;
     private int cantidadPersonas;
 
-    //hacer el array y sumar los valores de doubles
-
     //imprimir mensaje para el conductor asignado
-    public static void mensajeConductorB(String conductorB){
-        System.out.println("El conductor elegido para este auto es: "+conductorB);
+    public static void mensajeConductorB(String nombre){
+        System.out.println("El conductor elegido para este auto es: "+ nombre);
+    }
+
+    @Override
+    public void TiempoPits(double tiempo, int cantidadPersonas) {
+
     }
 }
 
