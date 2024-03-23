@@ -1,5 +1,4 @@
 import Tareas.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +16,15 @@ public class PitCrewTeam {
 
     }
 
+    public List<Trabajador> getTeamDriverA() {
+        return teamDriverA;
+    }
+
+
+    public List<Trabajador> getTeamDriverB() {
+        return teamDriverB;
+    }
+
 
     public void adicionar(Trabajador trabajador) {
         listaTrabajadores.add(trabajador);
@@ -24,12 +32,11 @@ public class PitCrewTeam {
 
 
     public static void imprimirListaTrabajadores(List<Trabajador> listaTrabajadores) {
-        for (Trabajador trabajador : listaTrabajadores) {
+        for (Trabajador trabajador : PitCrewTeam.listaTrabajadores) {
             trabajador.atributos();
             System.out.println(); // Agrega una línea en blanco para separar los trabajadores
         }
     }
-
 
 
     public void categorizarTrabajadores(String nombre, String rol, double tiempo) {
@@ -76,8 +83,7 @@ public class PitCrewTeam {
     }
 
 
-
-    public static void separarEquipo(){
+    public static void separarEquipo(List<Trabajador> listaTrabajadores) {
 
         int flapAdjustCount = 0;
         int frontJackCount = 0;
@@ -88,7 +94,7 @@ public class PitCrewTeam {
         int tyreOffCount = 0;
         int tyreOnCount = 0;
 
-        for (Trabajador trabajador : listaTrabajadores) {
+        for (Trabajador trabajador : PitCrewTeam.listaTrabajadores) {
             switch (trabajador.getRol()) {
                 case "FlapAdjust":
                     if (flapAdjustCount < 2) {
@@ -162,17 +168,17 @@ public class PitCrewTeam {
 
 
         while (teamDriverA.size() < 5) {
-            teamDriverA.add(listaTrabajadores.remove(0));
+            teamDriverA.add(PitCrewTeam.listaTrabajadores.remove(0));
         }
 
         while (teamDriverB.size() < 5) {
-            teamDriverB.add(listaTrabajadores.remove(0));
+            teamDriverB.add(PitCrewTeam.listaTrabajadores.remove(0));
         }
 
 
     }
 
-    public static void Tiempo(List <Trabajador> TeamDriverA, List<Trabajador> TeamDriverB){
+    public static void Tiempo(List<Trabajador> TeamDriverA, List<Trabajador> TeamDriverB) {
         double TiempoTDA = 0;
         double TiempoTDB = 0;
         for (int i = 0; i < TeamDriverA.size(); i++) {
@@ -181,12 +187,12 @@ public class PitCrewTeam {
         for (int i = 0; i < TeamDriverB.size(); i++) {
             TiempoTDB = TiempoTDB + TeamDriverB.get(i).getTiempo();
         }
-        if(TiempoTDA <= 2 ){
+        if (TiempoTDA <= 2) {
             System.out.println("Gano A");
         } else if (TiempoTDA > 2) {
             System.out.println("Perdio ");
         }
-        if(TiempoTDB > 2){
+        if (TiempoTDB > 2) {
             System.out.println("Gano B");
         } else if (TiempoTDB < 2) {
             System.out.println("Perdio B");
@@ -194,7 +200,9 @@ public class PitCrewTeam {
     }
 
 
-
-
+    public Iterable<? extends Trabajador> getListaTrabajadores() {
+        Iterable<? extends Trabajador> o = null;
+        return o;
+    }
 
 }

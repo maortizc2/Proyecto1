@@ -2,18 +2,55 @@ import Tareas.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class F1Team {
+
+
+    private String nombre;
+    private int añoFundacion;
+    private String teamPrincipal;
 
     private static List<Trabajador> listaTrabajadores = new ArrayList<>();
     private static List<Trabajador> teamDriverA = new ArrayList<>();
     private static List<Trabajador> teamDriverB = new ArrayList<>();
 
 
+    public F1Team(String nombre, int añoFundacion, String teamPrincipal) {
+        this.nombre = nombre;
+        this.añoFundacion = añoFundacion;
+        this.teamPrincipal = teamPrincipal;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getAñoFundacion() {
+        return añoFundacion;
+    }
+
+    public void setAñoFundacion(int añoFundacion) {
+        this.añoFundacion = añoFundacion;
+    }
+
+    public String getTeamPrincipal() {
+        return teamPrincipal;
+    }
+
+    public void setTeamPrincipal(String teamPrincipal) {
+        this.teamPrincipal = teamPrincipal;
+    }
+
     public static void main(String[] args) {
 
 
         PitCrewTeam pitCrewTeam = new PitCrewTeam();
+        F1Team f1Team = new F1Team("Mercedes", 1970, "Toto Wolff");
 
 
         Trabajador trabajador1=new Trabajador("Josep josanson ", "TyreGunner", 0.4);
@@ -67,21 +104,56 @@ public class F1Team {
         pitCrewTeam.adicionar(trabajador19);
         pitCrewTeam.adicionar(trabajador20);
 
-        // Imprimir la lista de trabajadores
-        pitCrewTeam.imprimirListaTrabajadores();
 
-        // Categorizar los trabajadores
-        for (Trabajador trabajador : pitCrewTeam.getListaTrabajadores()) {
-            pitCrewTeam.categorizarTrabajadores(trabajador.getNombre(), trabajador.getRol(), trabajador.getTiempo());
-        }
+        System.out.println("Sistema F1Team");
 
-        // Separar el equipo
-        pitCrewTeam.separarEquipo();
 
-        // Calcular y mostrar los tiempos
-        pitCrewTeam.Tiempo(pitCrewTeam.getTeamDriverA(), pitCrewTeam.getTeamDriverB());
+
+        int opcion;
+        do {
+            System.out.println("\nMenú:");
+            System.out.println("1. Ver lista de trabajadores");
+            System.out.println("2. Ver lista del teamA");
+            System.out.println("3. Ver lista del teamB");
+            System.out.println("4. Ver cálculo de los tiempos");
+            System.out.println("5. Ver datos del quipo");
+            System.out.println("0. Salir");
+            System.out.print("Seleccione una opción: ");
+
+
+            Scanner scanner = new Scanner(System.in);
+            opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    pitCrewTeam.imprimirListaTrabajadores(listaTrabajadores);
+                    break;
+                case 2:
+                    pitCrewTeam.imprimirListaTrabajadores(teamDriverA);
+                    break;
+                case 3:
+                    pitCrewTeam.imprimirListaTrabajadores(teamDriverB);
+                    break;
+                case 4:
+                    pitCrewTeam.Tiempo(pitCrewTeam.getTeamDriverA(), pitCrewTeam.getTeamDriverB());
+                    break;
+                case 5:
+                    System.out.println("Nombre del equipo: " + f1Team.getNombre());
+                    System.out.println("Año de fundación: " + f1Team.getAñoFundacion());
+                    System.out.println("Team principal: " + f1Team.getTeamPrincipal());
+                    break;
+                case 0:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("Opción inválida");
+                    break;
+            }
+        } while (opcion != 0);
 
 
 
     }
+
+
 }
