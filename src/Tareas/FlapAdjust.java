@@ -1,12 +1,14 @@
 package Tareas;
 
-//se evidencia la herencia
+//Se evidencia la herencia
 public class FlapAdjust  extends Trabajador{
 
+    //constructor de la clase
     public FlapAdjust(String nombre, String rol,double tiempo){
         super(nombre,rol,tiempo);
     }
 
+    //dos metodos propios de la clase
     public static void AjustarFlap(double tiempo){
         System.out.println("Ajustando flap, tiempo estimado: "+tiempo );
     }

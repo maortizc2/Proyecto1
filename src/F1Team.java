@@ -1,29 +1,29 @@
 import Tareas.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+//Se crea la clase main
 public class F1Team {
 
-
+  //Atributos propios de la clase main
     private String nombre;
     private int añoFundacion;
     private String teamPrincipal;
 
-    //Instancias de  las listas que almacenaran la información de los roles
+    //Instancias de las listas que almacenaran la información de los roles
     private static List<Trabajador> listaTrabajadores = new ArrayList<>();
     private static List<Trabajador> teamDriverA = new ArrayList<>();
     private static List<Trabajador> teamDriverB = new ArrayList<>();
 
-   // se crea el constructor del equipo
+   //Se crea el constructor del equipo
     public F1Team(String nombre, int añoFundacion, String teamPrincipal) {
         this.nombre = nombre;
         this.añoFundacion = añoFundacion;
         this.teamPrincipal = teamPrincipal;
     }
 
-    //Getters and Setters
+    //Getter and Setter
     public String getNombre() {
         return nombre;
     }
@@ -44,10 +44,10 @@ public class F1Team {
         return teamPrincipal;
     }
 
-    //metodo de un grupo general
     public void setTeamPrincipal(String teamPrincipal) {
         this.teamPrincipal = teamPrincipal;
     }
+
 
     // Metodo para crear todos los objetos
     public static void main(String[] args) {
@@ -85,8 +85,7 @@ public class F1Team {
 //Objetos de Lollipop
         Trabajador trabajador20=new Trabajador("Emre Can", "Lollipop", 0.1);
 
-// Agregar todos los trabajadores a la listaTrabajadores
-
+   // Se agregan todos los trabajadores a la listaTrabajadores
         pitCrewTeam.adicionar(trabajador1);
         pitCrewTeam.adicionar(trabajador2);
         pitCrewTeam.adicionar(trabajador3);
@@ -112,23 +111,23 @@ public class F1Team {
         System.out.println("Sistema F1Team");
 
 
-        //creacion del menu
+        //Creacion del menu
         int opcion;
         do {
             System.out.println("\nMenú:");
             System.out.println("1. Ver lista de trabajadores");
             System.out.println("2. Ver lista del teamA");
             System.out.println("3. Ver lista del teamB");
-            System.out.println("4. Ver cálculo de los tiempos");
+            System.out.println("4. Que equipo de trabajadores lo hizo mas rápido?");
             System.out.println("5. Ver datos del quipo");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
 
-
+           //Creacion del objeto scanner
             Scanner scanner = new Scanner(System.in);
             opcion = scanner.nextInt();
 
-            //filtrador de categorias
+            //Respuestas del menu
             switch (opcion) {
                 case 1:
                     pitCrewTeam.imprimirListaTrabajadores(listaTrabajadores);

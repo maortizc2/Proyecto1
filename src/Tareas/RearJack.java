@@ -1,11 +1,13 @@
 package Tareas;
 
-//se evidencia la herencica
+//Se evidencia la herencica
 public class RearJack extends Trabajador {
-
+    //Costructor de la clase
     public RearJack(String nombre, String rol, double tiempo){
         super(nombre,rol, tiempo);
     }
+
+    //Dos metodos propios de la clase
     public static void subirCarro(double tiempo){
         System.out.println("Subiendo el auto, tiempo estimado: "+tiempo);
     }

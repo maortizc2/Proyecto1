@@ -2,35 +2,31 @@ import Tareas.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class PitCrewTeam {
 
-    int cantMiembros;
     //Creacion de las listas
     private static List<Trabajador> listaTrabajadores = new ArrayList<>();
     private static List<Trabajador> teamDriverA = new ArrayList<>();
     private static List<Trabajador> teamDriverB = new ArrayList<>();
 
-    public PitCrewTeam() {
+    //Constructor de la clase
+    public PitCrewTeam(){}
 
-    }
-//los Get de las listas
+    //Se adicionan a la lista correspondiente segun el equipo A y B
     public List<Trabajador> getTeamDriverA() {
         return teamDriverA;
     }
-
-
     public List<Trabajador> getTeamDriverB() {
         return teamDriverB;
     }
 
-     //Metodo para adicionar elemetos ala lista trbajadores
+
+    //Metodo para adicionar elementos a la lista trabajadores
     public void adicionar(Trabajador trabajador) {
         listaTrabajadores.add(trabajador);
     }
 
-    //metodo para imprimir la lista trabajadores
+    //Metodo para imprimir la lista Trabajadores
     public static void imprimirListaTrabajadores(List<Trabajador> listaTrabajadores) {
         for (Trabajador trabajador : PitCrewTeam.listaTrabajadores) {
             trabajador.atributos();
@@ -38,7 +34,7 @@ public class PitCrewTeam {
         }
     }
 
-   //Creador de objetos segun su rol
+   //Metodo para categorizar los objetos creados segun su rol
     public void categorizarTrabajadores(String nombre, String rol, double tiempo) {
         Trabajador trabajador = null;
 
@@ -82,7 +78,7 @@ public class PitCrewTeam {
 
     }
 
-  //Se dividiran los travajadores en dos grupos , A y B
+  //Se dividen los trabajadores en dos grupos en 2 grupos: A y B
     public static void separarEquipo(List<Trabajador> listaTrabajadores) {
 
         int flapAdjustCount = 0;
@@ -166,18 +162,18 @@ public class PitCrewTeam {
             }
         }
 
-       //implementacion para asegurarse que los grupos para cada uno no son mayores de 5
+       //Implementacion para asegurarse que los grupos para cada uno no son mayores de 5
         while (teamDriverA.size() < 5) {
             teamDriverA.add(PitCrewTeam.listaTrabajadores.remove(0));
         }
-
         while (teamDriverB.size() < 5) {
             teamDriverB.add(PitCrewTeam.listaTrabajadores.remove(0));
         }
 
 
     }
-  //metodo para hacer la sumatoria y imprimir la frase de ganaste o perdiste
+
+  //Metodo para hacer la sumatoria del tiempo segun el rol y devolver respuesta segun el resultado
     public static void Tiempo(List<Trabajador> TeamDriverA, List<Trabajador> TeamDriverB) {
         double TiempoTDA = 0;
         double TiempoTDB = 0;
@@ -188,20 +184,14 @@ public class PitCrewTeam {
             TiempoTDB = TiempoTDB + TeamDriverB.get(i).getTiempo();
         }
         if (TiempoTDA <= 2) {
-            System.out.println("Gano A");
+            System.out.println("Equipo A, lo hizo mas rápido");
         } else if (TiempoTDA > 2) {
-            System.out.println("Perdio ");
+            System.out.println("Equipo A, lo hizo mas lento ");
         }
         if (TiempoTDB > 2) {
-            System.out.println("Gano B");
+            System.out.println("Equipo A, lo hizo mas rápido");
         } else if (TiempoTDB < 2) {
-            System.out.println("Perdio B");
+            System.out.println("Equipo B, lo hizo mas lento");
         }
     }
-
-    public Iterable<? extends Trabajador> getListaTrabajadores() {
-        Iterable<? extends Trabajador> o = null;
-        return o;
-    }
-
 }
