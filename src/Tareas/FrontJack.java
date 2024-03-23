@@ -1,5 +1,5 @@
 package Tareas;
-
+//Se evidencia la herencia
 public class FrontJack extends Trabajador {
 
     public FrontJack(String nombre, String rol,double tiempo){

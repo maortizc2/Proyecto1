@@ -11,17 +11,19 @@ public class F1Team {
     private int añoFundacion;
     private String teamPrincipal;
 
+    //Instancias de  las listas que almacenaran la información de los roles
     private static List<Trabajador> listaTrabajadores = new ArrayList<>();
     private static List<Trabajador> teamDriverA = new ArrayList<>();
     private static List<Trabajador> teamDriverB = new ArrayList<>();
 
-
+   // se crea el constructor del equipo
     public F1Team(String nombre, int añoFundacion, String teamPrincipal) {
         this.nombre = nombre;
         this.añoFundacion = añoFundacion;
         this.teamPrincipal = teamPrincipal;
     }
 
+    //Getters and Setters
     public String getNombre() {
         return nombre;
     }
@@ -42,17 +44,19 @@ public class F1Team {
         return teamPrincipal;
     }
 
+    //metodo de un grupo general
     public void setTeamPrincipal(String teamPrincipal) {
         this.teamPrincipal = teamPrincipal;
     }
 
+    // Metodo para crear todos los objetos
     public static void main(String[] args) {
 
 
         PitCrewTeam pitCrewTeam = new PitCrewTeam();
         F1Team f1Team = new F1Team("Mercedes", 1970, "Toto Wolff");
 
-
+        //se evidencia el polimorfismo
         Trabajador trabajador1=new Trabajador("Josep josanson ", "TyreGunner", 0.4);
         Trabajador trabajador2=new Trabajador("Jean Dupont", "TyreGunner",0.4);
         Trabajador trabajador3=new Trabajador("Ivan Ivaov", "TyreGunner", 0.4);
@@ -108,7 +112,7 @@ public class F1Team {
         System.out.println("Sistema F1Team");
 
 
-
+        //creacion del menu
         int opcion;
         do {
             System.out.println("\nMenú:");
@@ -124,6 +128,7 @@ public class F1Team {
             Scanner scanner = new Scanner(System.in);
             opcion = scanner.nextInt();
 
+            //filtrador de categorias
             switch (opcion) {
                 case 1:
                     pitCrewTeam.imprimirListaTrabajadores(listaTrabajadores);

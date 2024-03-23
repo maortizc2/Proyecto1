@@ -1,5 +1,5 @@
 package Tareas;
-
+//se evidencia herencia
 public class TyreOff extends Trabajador{
 
     public TyreOff(String nombre, String rol,double tiempo){

@@ -1,5 +1,5 @@
 package Tareas;
-
+ //se evidencia la herencia
 public class Steadier extends Trabajador{
 
     public Steadier(String nombre, String rol, double tiempo){

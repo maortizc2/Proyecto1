@@ -1,7 +1,7 @@
 package Tareas;
 
 public  class Trabajador {
-
+    //abstrancion y encapsulamiento
     private String nombre;
     private String rol;
     private double tiempo;
@@ -23,6 +23,7 @@ public  class Trabajador {
         System.out.println(nombre + " Puede descansar");
     }
 
+    //get and set
     public String getNombre() {
         return nombre;
     }

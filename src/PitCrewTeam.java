@@ -7,7 +7,7 @@ import java.util.List;
 public class PitCrewTeam {
 
     int cantMiembros;
-
+    //Creacion de las listas
     private static List<Trabajador> listaTrabajadores = new ArrayList<>();
     private static List<Trabajador> teamDriverA = new ArrayList<>();
     private static List<Trabajador> teamDriverB = new ArrayList<>();
@@ -15,7 +15,7 @@ public class PitCrewTeam {
     public PitCrewTeam() {
 
     }
-
+//los Get de las listas
     public List<Trabajador> getTeamDriverA() {
         return teamDriverA;
     }
@@ -25,12 +25,12 @@ public class PitCrewTeam {
         return teamDriverB;
     }
 
-
+     //Metodo para adicionar elemetos ala lista trbajadores
     public void adicionar(Trabajador trabajador) {
         listaTrabajadores.add(trabajador);
     }
 
-
+    //metodo para imprimir la lista trabajadores
     public static void imprimirListaTrabajadores(List<Trabajador> listaTrabajadores) {
         for (Trabajador trabajador : PitCrewTeam.listaTrabajadores) {
             trabajador.atributos();
@@ -38,7 +38,7 @@ public class PitCrewTeam {
         }
     }
 
-
+   //Creador de objetos segun su rol
     public void categorizarTrabajadores(String nombre, String rol, double tiempo) {
         Trabajador trabajador = null;
 
@@ -82,7 +82,7 @@ public class PitCrewTeam {
 
     }
 
-
+  //Se dividiran los travajadores en dos grupos , A y B
     public static void separarEquipo(List<Trabajador> listaTrabajadores) {
 
         int flapAdjustCount = 0;
@@ -166,7 +166,7 @@ public class PitCrewTeam {
             }
         }
 
-
+       //implementacion para asegurarse que los grupos para cada uno no son mayores de 5
         while (teamDriverA.size() < 5) {
             teamDriverA.add(PitCrewTeam.listaTrabajadores.remove(0));
         }
@@ -177,7 +177,7 @@ public class PitCrewTeam {
 
 
     }
-
+  //metodo para hacer la sumatoria y imprimir la frase de ganaste o perdiste
     public static void Tiempo(List<Trabajador> TeamDriverA, List<Trabajador> TeamDriverB) {
         double TiempoTDA = 0;
         double TiempoTDB = 0;
@@ -198,7 +198,6 @@ public class PitCrewTeam {
             System.out.println("Perdio B");
         }
     }
-
 
     public Iterable<? extends Trabajador> getListaTrabajadores() {
         Iterable<? extends Trabajador> o = null;

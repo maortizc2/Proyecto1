@@ -1,5 +1,6 @@
 package Tareas;
 
+//se evidencia la herencica
 public class RearJack extends Trabajador {
 
     public RearJack(String nombre, String rol, double tiempo){

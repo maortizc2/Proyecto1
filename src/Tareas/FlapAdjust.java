@@ -1,6 +1,6 @@
 package Tareas;
 
-
+//se evidencia la herencia
 public class FlapAdjust  extends Trabajador{
 
     public FlapAdjust(String nombre, String rol,double tiempo){

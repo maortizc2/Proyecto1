@@ -1,5 +1,5 @@
 package Tareas;
-
+//se evidencia la herencia
 public class Lollipop extends Trabajador{
 
     public Lollipop(String nombre, String rol,double tiempo){

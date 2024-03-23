@@ -1,5 +1,5 @@
 package Tareas;
-
+//se evidencia herencia
 public class TyreGunner extends Trabajador {
     private int time;
 
